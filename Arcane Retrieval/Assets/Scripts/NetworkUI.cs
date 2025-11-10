@@ -11,119 +11,58 @@ using UnityEngine;
 
 public class NetworkUI : MonoBehaviour
 {
-    public TMP_Text debugText; // assign in inspector
+    public TMP_Text debugText;
     public TMP_InputField joinCodeInput;
-    public GameObject playerPrefab;
 
     async void Start()
     {
         AppendDebug("Initializing Unity Services...");
 
-        try
-        {
-            await UnityServices.InitializeAsync();
+        await UnityServices.InitializeAsync();
 
-            if (!AuthenticationService.Instance.IsSignedIn)
-            {
-                AppendDebug("Signing in anonymously...");
-                await AuthenticationService.Instance.SignInAnonymouslyAsync();
-                AppendDebug("Signed in successfully!");
-            }
-            else
-            {
-                AppendDebug("Already signed in.");
-            }
-        }
-        catch (AuthenticationException ex)
+        if (!AuthenticationService.Instance.IsSignedIn)
         {
-            AppendDebug("Authentication exception: " + ex.Message);
-        }
-        catch (System.Exception ex)
-        {
-            AppendDebug("Unexpected error: " + ex.Message);
+            AppendDebug("Signing in anonymously...");
+            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+            AppendDebug("Signed in!");
         }
     }
 
-    private void Awake()
+    public async Task<string> StartHostRelay()
     {
-        NetworkManager.Singleton.OnClientConnectedCallback += SpawnPlayerOnServer;
-    }
+        AppendDebug("Creating Relay allocation...");
+        Allocation allocation = await RelayService.Instance.CreateAllocationAsync(4);
+        string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
+        AppendDebug("Relay Join Code: " + joinCode);
 
-    private void SpawnPlayerOnServer(ulong clientId)
-    {
-        if (!NetworkManager.Singleton.IsServer) return;
+        var relayData = new RelayServerData(allocation, "dtls");
+        NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayData);
 
-        GameObject playerInstance = Instantiate(playerPrefab);
-        playerInstance.GetComponent<NetworkObject>().SpawnWithOwnership(clientId);
-
-        AppendDebug("Spawned player for client: " + clientId);
-    }
-
-
-    public async void StartHost()
-    {
-        try
-        {
-            AppendDebug("Creating Relay Allocation...");
-            Allocation allocation = await RelayService.Instance.CreateAllocationAsync(4);
-
-            string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
-            AppendDebug("Relay Join Code: " + joinCode);
-
-            var relayServerData = new RelayServerData(allocation, "dtls");
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
-
-            NetworkManager.Singleton.StartHost();
+        bool success = NetworkManager.Singleton.StartHost();
+        if (success)
             AppendDebug("Host started!");
+        FindObjectOfType<LobbyManager>()?.AddPlayer(NetworkManager.Singleton.LocalClientId);
 
-            SpawnPlayer(NetworkManager.Singleton.LocalClientId);
-        }
-        catch (System.Exception e)
-        {
-            AppendDebug("Host Error: " + e.Message);
-        }
+
+        return joinCode;
     }
 
-    public async void StartClient()
+    public async Task StartClientRelay(string code)
     {
-        string joinCode = joinCodeInput.text; // get the text here
-        AppendDebug("Trying to join with code: " + joinCode);
+        AppendDebug("Joining host with code: " + code);
+        JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(code);
 
-        try
-        {
-            JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
+        var relayData = new RelayServerData(joinAllocation, "dtls");
+        NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayData);
 
-            var relayServerData = new RelayServerData(joinAllocation, "dtls");
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
-
-            NetworkManager.Singleton.StartClient();
-            AppendDebug("Client started!");
-
-           
-        }
-        catch (System.Exception e)
-        {
-            AppendDebug("Join Error: " + e.Message);
-        }
+        NetworkManager.Singleton.StartClient();
+        AppendDebug("Client started!");
     }
 
-    private void SpawnPlayer(ulong clientId)
-    {
-        if (playerPrefab != null && NetworkManager.Singleton.IsServer)
-        {
-            GameObject playerInstance = Instantiate(playerPrefab);
-            playerInstance.GetComponent<NetworkObject>().SpawnWithOwnership(clientId);
-            AppendDebug("Player spawned for client: " + clientId);
-        }
-    }
-
-
-    void AppendDebug(string message)
+    private void AppendDebug(string message)
     {
         Debug.Log(message);
         if (debugText != null)
-        {
             debugText.text += message + "\n";
-        }
     }
 }
