@@ -1,0 +1,370 @@
+Q1: How do I add the model to the scene?
+
+Just go to your Project or Content folder, find the model Prefab, and drag and drop it into your Scene.
+
+
+
+--------------------------------------------------------------------------
+
+
+Q2: How do I change the facial expressions? I don’t see any shape keys or sliders.
+
+    Click on the character in your scene.
+
+    Click the small arrow next to the model to expand it.
+
+    You’ll see options like: Root, Face, Body, Hair, etc.
+
+    Click on "Face".
+
+    Now in the Inspector, scroll down to find BlendShapes — these are your facial expressions.
+
+    Adjust the sliders to control eyes, mouth, eyebrows, and more.
+
+
+------------------------------------------------------------------
+
+
+Q3: I can’t see the rig. Is the model not rigged?
+
+The model is fully rigged. To view the bones:
+
+    Select the character in the Hierarchy.
+
+    At the top of Unity, click Animation Rigging (next to Component/GameObject).
+
+    Click on Bone Renderer Setup.
+    This will display the skeleton rig (bones) for the model. 
+
+
+-----------------------------------------
+
+
+Q4: The model looks pink or has missing textures. How do I fix it?
+
+This usually happens if Unity can't find the right shader.
+
+    Go to the Materials folder.
+
+    Select the material and choose the right Shader based on your pipeline:
+
+        Built-in Pipeline: Use Standard.
+
+        URP: Use Universal Render Pipeline/Lit.
+
+        HDRP: Use HDRP/Lit.
+        If needed, reassign the texture maps manually.
+
+
+-----------------------------------------
+
+Q5: How do I switch outfits or accessories?
+
+If your character has extra outfits, you’ll find them included as separate prefabs in the package. Just look in the Project folder where the main prefab is — you’ll see options like Outfit_School, Outfit_Black, etc.
+
+To use them:
+
+    Drag the outfit prefab you want into the scene.
+
+    You can also copy components or merge parts as needed.
+
+    If you don’t see any extra outfits, don’t worry — you can request the creator to add more, and they’ll be provided for free.
+
+
+-----------------------------------------------------------
+
+
+Q6: The character is too big or too small. How do I resize it?
+
+    Select the character in the Hierarchy.
+
+    In the Inspector, go to the Transform component.
+
+    Adjust the Scale values (X, Y, Z) as needed.
+
+    Example: Use 0.5 to make it smaller, or 2 to make it larger.
+
+
+--------------------------------------------------------------------------------------
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Q7: How do I tweak clothes physics?
+
+To adjust the clothes physics:
+
+    In the Hierarchy, select the model you want to edit.
+
+    Click the small arrow to expand its structure.
+
+    You'll see: Root, Face, Body, Hair, and Secondary.
+
+    Click on Secondary.
+
+    In the Inspector, you'll find the Spring Bone scripts.
+
+Here, you can tweak settings like:
+
+    Hit Radius
+
+    Collision Groups
+
+    Stiffness Force
+
+    Gravity Power
+
+Tip: Make sure Gizmos are turned on in the Scene view — it helps you see and fine-tune how the physics behave in real time.
+
+
+
+
+
+
+Mandarin Chinese – 中文（中国大陆/台湾）
+
+Q1: 如何将模型添加到场景中？
+只需进入你的项目或内容文件夹，找到模型预制体（Prefab），然后将其拖放到场景中即可。
+
+Q2: 如何更改面部表情？我没有看到形状键或滑块。
+点击场景中的角色。
+点击模型旁边的小箭头来展开它。
+你会看到以下选项：Root、Face、Body、Hair 等等。
+点击“Face”。
+然后在检视器（Inspector）中向下滚动，找到 BlendShapes —— 这些就是你的面部表情。
+通过滑块来控制眼睛、嘴巴、眉毛等部位的变化。
+
+Q3: 我看不到绑定骨骼。这个模型没有骨骼吗？
+该模型是完全绑定的。要查看骨骼结构：
+在层级（Hierarchy）中选择角色。
+在 Unity 顶部，点击 Animation Rigging（在 Component/GameObject 旁边）。
+点击 Bone Renderer Setup。
+这将显示模型的骨骼结构。
+
+Q4: 模型看起来是粉红色的或缺少贴图。如何修复？
+这通常是 Unity 找不到正确的 Shader（着色器）导致的。
+进入 Materials 文件夹。
+选择材质并根据你的渲染管线选择正确的 Shader：
+
+    Built-in Pipeline：使用 Standard。
+
+    URP：使用 Universal Render Pipeline/Lit。
+
+    HDRP：使用 HDRP/Lit。
+    如有需要，手动重新分配纹理贴图。
+
+Q5: 如何更换服装或配件？
+如果你的角色有额外服装，它们会以独立的预制体形式包含在包中。只需进入包含主预制体的项目文件夹，你会看到 Outfit_School、Outfit_Black 等选项。
+使用方法：
+将你想使用的服装预制体拖入场景。
+你也可以复制组件或合并部件。
+如果你没有看到额外的服装，不用担心 —— 你可以请求创作者添加更多，他们会免费提供。
+
+Q6: 角色太大或太小了。如何调整大小？
+在层级（Hierarchy）中选择角色。
+在检视器（Inspector）中找到 Transform 组件。
+根据需要调整 Scale（X、Y、Z）数值。
+例如：使用 0.5 来缩小，或使用 2 来放大。
+
+Q7: 如何调整衣物物理效果？
+在层级（Hierarchy）中选择你要编辑的模型。
+点击小箭头展开其结构。
+你会看到：Root、Face、Body、Hair 和 Secondary。
+点击 Secondary。
+在检视器中你会看到 Spring Bone 脚本。
+你可以在此调整以下设置：
+
+    Hit Radius
+
+    Collision Groups
+
+    Stiffness Force
+
+    Gravity Power
+    提示：确保在场景视图中启用 Gizmos —— 这有助于你实时查看物理效果并进行微调。
+
+Japanese – 日本語
+
+Q1: モデルをシーンに追加するには？
+プロジェクトまたはコンテンツフォルダーに移動し、モデルのプレハブを見つけて、それをシーンにドラッグ＆ドロップするだけです。
+
+Q2: 表情を変更するには？シェイプキーやスライダーが見つかりません。
+シーン内のキャラクターをクリックします。
+モデルの横にある小さな矢印をクリックして展開します。
+Root、Face、Body、Hair などのオプションが表示されます。
+「Face」をクリックします。
+インスペクターで下にスクロールすると「BlendShapes」が見つかります。これが表情です。
+スライダーを調整して、目、口、眉などを操作します。
+
+Q3: リグが見えません。モデルはリギングされていないのですか？
+このモデルは完全にリギングされています。ボーンを表示するには：
+ヒエラルキーでキャラクターを選択します。
+Unity の上部メニューで「Animation Rigging」（Component/GameObject の横）をクリックします。
+「Bone Renderer Setup」をクリック。
+これでモデルのスケルトンリグ（ボーン）が表示されます。
+
+Q4: モデルがピンクに見える、またはテクスチャがありません。どうすれば直せますか？
+これは通常、Unity が正しいシェーダーを見つけられない場合に発生します。
+Materials フォルダに移動します。
+マテリアルを選択し、使用しているパイプラインに応じて適切なシェーダーを選択します：
+
+    Built-in Pipeline：Standard を使用
+
+    URP：Universal Render Pipeline/Lit を使用
+
+    HDRP：HDRP/Lit を使用
+    必要に応じてテクスチャマップを手動で再割り当てしてください。
+
+Q5: 衣装やアクセサリーを変更するには？
+キャラクターに追加の衣装がある場合、それらはパッケージ内に個別のプレハブとして含まれています。メインプレハブがあるプロジェクトフォルダを確認すると、Outfit_School、Outfit_Black などのオプションがあります。
+使用方法：
+使用したい衣装プレハブをシーンにドラッグします。
+必要に応じてコンポーネントをコピーしたり、パーツを統合することも可能です。
+追加の衣装が見つからない場合でも、制作者にリクエストすれば無料で追加されます。
+
+Q6: キャラクターが大きすぎる/小さすぎる。サイズを変更するには？
+ヒエラルキーでキャラクターを選択します。
+インスペクターで「Transform」コンポーネントを見つけます。
+スケール（X、Y、Z）を必要に応じて調整します。
+例：0.5 にすると小さくなり、2 にすると大きくなります。
+
+Q7: 衣服の物理挙動を調整するには？
+ヒエラルキーで編集したいモデルを選択します。
+小さな矢印をクリックして構造を展開します。
+Root、Face、Body、Hair、Secondary が表示されます。
+「Secondary」をクリックします。
+インスペクターで「Spring Bone」スクリプトが見つかります。
+以下のような設定を調整できます：
+
+    ヒット半径（Hit Radius）
+
+    衝突グループ（Collision Groups）
+
+    剛性力（Stiffness Force）
+
+    重力（Gravity Power）
+    ヒント：Gizmos をシーンビューでオンにしておくと、物理挙動をリアルタイムで確認・調整しやすくなります。
+
+Korean – 한국어
+
+Q1: 모델을 씬에 추가하려면 어떻게 하나요?
+프로젝트 또는 콘텐츠 폴더로 이동하여 모델 프리팹을 찾아 씬으로 드래그 앤 드롭하세요.
+
+Q2: 얼굴 표정을 변경하려면 어떻게 하나요? 쉐이프 키나 슬라이더가 안 보여요.
+씬에서 캐릭터를 클릭하세요.
+모델 옆의 작은 화살표를 클릭하여 확장합니다.
+Root, Face, Body, Hair 등의 옵션이 표시됩니다.
+"Face"를 클릭하세요.
+Inspector 창에서 아래로 스크롤하면 BlendShapes가 보입니다. 이것이 얼굴 표정입니다.
+슬라이더를 조절하여 눈, 입, 눈썹 등을 컨트롤하세요.
+
+Q3: 리깅이 안 보입니다. 모델이 리깅되지 않은 건가요?
+이 모델은 완전히 리깅되어 있습니다. 뼈대를 보려면:
+Hierarchy에서 캐릭터를 선택하세요.
+Unity 상단 메뉴에서 Animation Rigging (Component/GameObject 옆)을 클릭합니다.
+Bone Renderer Setup을 클릭하세요.
+그러면 모델의 스켈레톤 리그가 표시됩니다.
+
+Q4: 모델이 분홍색이거나 텍스처가 없습니다. 어떻게 고치나요?
+이 문제는 Unity가 올바른 셰이더를 찾지 못할 때 발생합니다.
+Materials 폴더로 이동하세요.
+재질을 선택하고 사용하는 파이프라인에 따라 올바른 셰이더를 선택하세요:
+
+    Built-in Pipeline: Standard 사용
+
+    URP: Universal Render Pipeline/Lit 사용
+
+    HDRP: HDRP/Lit 사용
+    필요시 텍스처 맵을 수동으로 다시 지정하세요.
+
+Q5: 의상이나 액세서리를 바꾸려면 어떻게 하나요?
+캐릭터에 추가 의상이 포함되어 있다면, 별도의 프리팹으로 제공됩니다. 메인 프리팹이 있는 프로젝트 폴더를 보면 Outfit_School, Outfit_Black 등 다양한 옵션이 보일 것입니다.
+사용 방법:
+원하는 의상 프리팹을 씬으로 드래그하세요.
+필요하다면 컴포넌트를 복사하거나 부품을 병합할 수 있습니다.
+추가 의상이 없다면 제작자에게 요청하면 무료로 제공됩니다.
+
+Q6: 캐릭터 크기가 너무 크거나 작습니다. 크기를 어떻게 조절하나요?
+Hierarchy에서 캐릭터를 선택하세요.
+Inspector에서 Transform 컴포넌트를 찾으세요.
+필요에 따라 Scale(X, Y, Z)을 조절하세요.
+예: 0.5는 더 작게, 2는 더 크게 조정됩니다.
+
+Q7: 의상 물리 효과를 어떻게 조절하나요?
+Hierarchy에서 수정할 모델을 선택하세요.
+작은 화살표를 클릭하여 구조를 확장합니다.
+Root, Face, Body, Hair, Secondary가 표시됩니다.
+Secondary를 클릭하세요.
+Inspector에서 Spring Bone 스크립트를 찾을 수 있습니다.
+다음과 같은 설정을 조정할 수 있습니다:
+
+    충돌 반경 (Hit Radius)
+
+    충돌 그룹 (Collision Groups)
+
+    강성 힘 (Stiffness Force)
+
+    중력 세기 (Gravity Power)
+    팁: Scene 뷰에서 Gizmos를 켜면 물리 효과를 실시간으로 보면서 조정하기 쉽습니다.
+
+Spanish – Español
+
+Q1: ¿Cómo agrego el modelo a la escena?
+Simplemente ve a tu carpeta de Proyecto o Contenido, encuentra el Prefab del modelo y arrástralo a tu Escena.
+
+Q2: ¿Cómo cambio las expresiones faciales? No veo ninguna clave de forma ni deslizadores.
+Haz clic en el personaje en tu escena.
+Haz clic en la pequeña flecha junto al modelo para expandirlo.
+Verás opciones como: Root, Face, Body, Hair, etc.
+Haz clic en "Face".
+Ahora en el Inspector, desplázate hacia abajo para encontrar BlendShapes — estas son las expresiones faciales.
+Ajusta los deslizadores para controlar los ojos, la boca, las cejas, y más.
+
+Q3: No puedo ver el rig. ¿El modelo no está riggeado?
+El modelo está completamente riggeado. Para ver los huesos:
+Selecciona el personaje en la Jerarquía.
+En la parte superior de Unity, haz clic en Animation Rigging (junto a Component/GameObject).
+Haz clic en Bone Renderer Setup.
+Esto mostrará el esqueleto del modelo.
+
+Q4: El modelo se ve rosa o le faltan texturas. ¿Cómo lo arreglo?
+Esto normalmente ocurre si Unity no puede encontrar el shader correcto.
+Ve a la carpeta de Materials.
+Selecciona el material y elige el Shader correcto según tu pipeline:
+
+    Built-in Pipeline: Usa Standard.
+
+    URP: Usa Universal Render Pipeline/Lit.
+
+    HDRP: Usa HDRP/Lit.
+    Si es necesario, reasigna las texturas manualmente.
+
+Q5: ¿Cómo cambio de ropa o accesorios?
+Si tu personaje tiene ropa adicional, se incluirán como prefabs separados en el paquete. Simplemente busca en la carpeta del Proyecto donde está el prefab principal — verás opciones como Outfit_School, Outfit_Black, etc.
+Para usarlos:
+Arrastra el prefab de ropa que desees al escenario.
+También puedes copiar componentes o combinar partes si es necesario.
+Si no ves ropa extra, no te preocupes — puedes pedirle al creador que añada más, y se proporcionarán gratis.
+
+Q6: El personaje es demasiado grande o demasiado pequeño. ¿Cómo lo cambio de tamaño?
+Selecciona el personaje en la Jerarquía.
+En el Inspector, ve al componente Transform.
+Ajusta los valores de escala (X, Y, Z) según sea necesario.
+Ejemplo: Usa 0.5 para hacerlo más pequeño, o 2 para hacerlo más grande.
+
+Q7: ¿Cómo ajusto la física de la ropa?
+Para ajustar la física de la ropa:
+En la Jerarquía, selecciona el modelo que deseas editar.
+Haz clic en la pequeña flecha para expandir su estructura.
+Verás: Root, Face, Body, Hair y Secondary.
+Haz clic en Secondary.
+En el Inspector, encontrarás los scripts de Spring Bone.
+Aquí puedes ajustar configuraciones como:
+
+    Radio de impacto (Hit Radius)
+
+    Grupos de colisión (Collision Groups)
+
+    Fuerza de rigidez (Stiffness Force)
+
+    Potencia de gravedad (Gravity Power)
+    Consejo: Asegúrate de tener activados los Gizmos en la vista de escena — te ayudará a ver y ajustar cómo se comporta la física en tiempo real.
