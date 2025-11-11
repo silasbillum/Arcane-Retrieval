@@ -8,40 +8,26 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: N00_000_00_HairBack_00_HAIR (Instance)
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 1a97144e4ad27a04aafd70f7b915cedb, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _ALPHATEST_ON
   - _NORMALMAP
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2450
+  stringTagMap:
+    RenderType: TransparentCutout
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: afbcd1b2ec42ef744a40001291e951bc, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -52,19 +38,7 @@ Material:
         m_Texture: {fileID: 2800000, guid: 30ed2ccf724fcdf4e87df429ac44c676, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _OutlineWidthTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -94,32 +68,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - PixelSnap: 0
     - _AlphaToMask: 0
     - _BlendMode: 1
     - _BumpScale: 1
     - _CullMode: 2
     - _Cutoff: 0.5
     - _DebugMode: 0
-    - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EnableExternalAlpha: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
     - _IndirectLightIntensity: 0.1
     - _LightColorAttenuation: 0
     - _MToonVersion: 39
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
     - _OutlineColorMode: 1
     - _OutlineCullMode: 1
     - _OutlineLightingMix: 1
     - _OutlineScaledMaxDistance: 1
     - _OutlineWidth: 0
     - _OutlineWidthMode: 0
-    - _Parallax: 0.02
     - _ReceiveShadowRate: 1
     - _RimFresnelPower: 100
     - _RimLift: 0.1
@@ -127,10 +91,7 @@ Material:
     - _ShadeShift: 0
     - _ShadeToony: 0.6
     - _ShadingGradeRate: 1
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _UVSec: 0
     - _UvAnimRotation: 0
     - _UvAnimScrollX: 0
     - _UvAnimScrollY: 0
@@ -138,9 +99,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.85882354, g: 0.69411767, b: 0.69411767, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0.47450978, g: 0.74509805, b: 0.737255, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.25, g: 0.25, b: 0.25, a: 1}
     - _ShadeColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
